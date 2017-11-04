@@ -1,0 +1,5 @@
+- item1
+- item2
+- nested:
+    var1: hello
+    var2: world
