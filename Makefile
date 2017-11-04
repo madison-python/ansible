@@ -1,2 +1,2 @@
-slides.pdf: intro.md
-	pandoc -t beamer -V theme=metropolis -o $@ $<
+slides.pdf: intro.Rmd
+	Rscript -e 'rmarkdown::render("$<", output_format = "beamer_presentation", output_file = "$@")'

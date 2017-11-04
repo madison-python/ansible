@@ -1,12 +1,23 @@
 ---
 title: Never log in to your servers again with Ansible
+theme: metropolis
 ---
+`r source("config.R")`
 
 # Origins
 
 # History
 
 # Ansible for DevOps
+
+```{r ansible-for-devops}
+grid.arrange(
+  read_image("img/ansible-for-devops-cover.jpg"),
+  read_image("img/jeff-geerling.jpg"),
+  nrow = 1,
+  widths = c(0.6, 0.4)
+)
+```
 
 # Command line tools
 
