@@ -1,12 +1,56 @@
 ---
 title: Never log in to your servers again with Ansible
 theme: metropolis
+output:
+  beamer_presentation:
+    theme: metropolis
 ---
 `r source("config.R")`
 
-# Origins
+# Origins of the name "ansible"
 
-# History
+```{r enders-game-cover}
+draw_image("img/enders-game-cover.jpg")
+```
+
+# Use Ansible to orchestrate server operations
+
+```{r ansible-orchestra, engine="dot"}
+digraph {
+  fontname=Helvetica;
+  node[fontname=Helvetica shape=circle style=filled];
+  control -> {web1, web2, web3, db1, db2};
+  control[fillcolor="#fc8d62"];
+  web1, web2, web3[fillcolor="#66c2a5"];
+  db1, db2[fillcolor="#8da0cb"];
+}
+```
+
+# Control a single server with Ansible
+
+```{r ansible-simple, engine="dot"}
+digraph {
+  fontname=Helvetica;
+  node[fontname=Helvetica shape=circle style=filled];
+  laptop -> server;
+  laptop[fillcolor="#fc8d62"];
+  server[fillcolor="#66c2a5"];
+}
+```
+
+# Share control of servers
+
+```{r ansible-tower, engine="dot"}
+digraph {
+  fontname=Helvetica;
+  node[fontname=Helvetica shape=circle style=filled];
+  {player1, player2, player3} -> control -> {web1, web2, web3, db1, db2};
+  player1, player2, player3[fillcolor="#e78ac3"];
+  control[fillcolor="#fc8d62"];
+  web1, web2, web3[fillcolor="#66c2a5"];
+  db1, db2[fillcolor="#8da0cb"];
+}
+```
 
 # Ansible for DevOps
 
@@ -22,15 +66,15 @@ grid.arrange(
 # Command line tools
 
 ansible
-:   Interactive use for ad-hoc commands.
+:   Run an ad-hoc command.
 
-ansible-playbook
+playbook
 :   Run a playbook.
 
-ansible-vault
+vault
 :   Simple encryption.
 
-ansible-galaxy
+galaxy
 :   Use/develop 3rd party modules.
 
 # Vocabulary
