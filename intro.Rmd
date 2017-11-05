@@ -7,15 +7,15 @@ output:
 ---
 `r source("config.R")`
 
-# Origins of the name "ansible"
+# Where does the name "ansible" come from?
 
-```{r enders-game-cover}
+```{r enders-game-cover, out.height="2in", fig.cap="A scifi novel featuring an ansible as a communication device."}
 draw_image("img/enders-game-cover.jpg")
 ```
 
-# Use Ansible to orchestrate server operations
+# Use Ansible to talk to your fleet
 
-```{r ansible-orchestra, engine="dot"}
+```{r ansible-orchestra, engine="dot", out.width="3in"}
 digraph {
   fontname=Helvetica;
   node[fontname=Helvetica shape=circle style=filled];
@@ -24,6 +24,27 @@ digraph {
   web1, web2, web3[fillcolor="#66c2a5"];
   db1, db2[fillcolor="#8da0cb"];
 }
+```
+
+```bash
+control/$ ansible web -a "df"
+control/$ ansible db  -a "df"
+control/$ ansible all -a "df"
+```
+
+# An example inventory file listing all servers in fleet
+
+```
+# contents of /etc/ansible/hosts
+
+[web]
+web1.example.com
+web2.example.com
+web3.example.com
+
+[db]
+db1.example.com
+db2.example.com
 ```
 
 # Control a single server with Ansible
@@ -54,7 +75,7 @@ digraph {
 
 # Ansible for DevOps
 
-```{r ansible-for-devops}
+```{r ansible-for-devops, out.height="2.5in", fig.cap='"Ansible for DevOps" by Jeff Geerling aka geerlingguy.'}
 grid.arrange(
   read_image("img/ansible-for-devops-cover.jpg"),
   read_image("img/jeff-geerling.jpg"),
@@ -68,14 +89,22 @@ grid.arrange(
 ansible
 :   Run an ad-hoc command.
 
+        ansible web -a "df"
+
 playbook
 :   Run a playbook.
+
+        ansible-playbook setup.yml
 
 vault
 :   Simple encryption.
 
+        ansible-vault encrypt vars/secrets.yml
+
 galaxy
-:   Use/develop 3rd party modules.
+:   Use and develop 3rd party modules.
+
+        ansible-galaxy install geerlingguy.mysql
 
 # Vocabulary
 
@@ -91,13 +120,5 @@ task
 module
 :   A module is command or command wrapper.
 
-# Vocabulary (continued)
-
-inventory
-:   A description of IP addresses and names.
-
 role
 :   A bundle of tasks and variables to accomplish some modular goal.
-
-idempotent
-:   Design philosophy underlying Ansible. Only change things when needed.
