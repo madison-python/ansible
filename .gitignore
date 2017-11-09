@@ -2,3 +2,4 @@ slides.pdf
 *cache/
 *files/
 .Rproj.user
+.vagrant/

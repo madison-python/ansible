@@ -1,0 +1,4 @@
+---
+- hosts: vagrant
+  tasks:
+    - apt: name=ntp state=present
