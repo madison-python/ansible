@@ -1,4 +1,5 @@
 ---
-- hosts: vagrant
+- hosts: all
+  become: yes
   tasks:
-    - apt: name=ntp state=present
+    - apt: name=ntp state=present update_cache=yes
