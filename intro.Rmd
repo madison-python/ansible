@@ -112,7 +112,7 @@ digraph {
 digraph {
   fontname=Helvetica;
   node[fontname=Helvetica shape=circle style=filled];
-  laptop -> {VM, staging, prod};
+  laptop -> {VM, stage, prod};
   VM, stage, prod[size=1];
   laptop[fillcolor="#fc8d62"];
   VM[fillcolor="#8da0cb"];
