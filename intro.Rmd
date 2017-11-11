@@ -218,8 +218,7 @@ role
     mysql_user: pierce
     mysql_user_password: dont-do-this-either
   tasks:
-    - name: Configure MySQL
-      include_role: name=geerlingguy.mysql
+    - include_role: name=geerlingguy.mysql
       vars:
         mysql_databases:
           - name: "{{ mysql_db_name }}"
@@ -287,7 +286,7 @@ root/$
 apt
 :   Package manager for Debian/Ubuntu.
 
-        - name: Ensure bash and OpenSSL are the latest versions
+        - name: Install bash and OpenSSL
           apt: name={{ item }} state=latest
           with_items:
             - bash
@@ -297,15 +296,15 @@ git
 :   Manage git repositories.
 
         - git:
-            repo: https://github.com/madison-python/google-survey.git
-            dest: /home/pierce/google-survey
+            repo: https://github.com/me/myrepo.git
+            dest: /home/me/myrepo
 
 pip
 :   Package manager for python.
 
         - pip:
-            requirements: /home/pierce/google-survey/requirements.txt
-            virtualenv: /home/pierce/.venvs/google-survey
+            requirements: /myproj/requirements.txt
+            virtualenv: /venvs/myproj
 
 # Other modules
 
@@ -323,12 +322,17 @@ mysql_db
 fetch
 :   Retrieve a file from the host(s)
 
-        - fetch: src=/dumps/today.sql dest=/laptop/today.sql flat=yes
+        - fetch:
+            src: /dumps/today.sql
+            dest: /laptop/today.sql
+            flat: yes
 
 copy
 :   Copy a file to the server(s)
 
-        - copy: src=/laptop/yesterday.sql dest=/dumps/yesterday.sql
+        - copy:
+            src: /laptop/yesterday.sql
+            dest: /dumps/yesterday.sql
 
         - name: Restore the DB from a backup
           mysql_db:
