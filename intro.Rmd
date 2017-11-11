@@ -12,7 +12,7 @@ output:
 
 # Where does the name "ansible" come from?
 
-```{r enders-game-cover, out.height="2in", fig.cap="A sci-fi novel featuring an ansible as a communication device."}
+```{r enders-game-cover, fig.height=2, fig.cap="A sci-fi novel featuring an ansible as a communication device."}
 draw_image("img/enders-game-cover.jpg")
 ```
 

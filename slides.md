@@ -1,15 +1,13 @@
 Where does the name “ansible” come from?
 ========================================
 
-<img src="slides_files/figure-markdown_strict/enders-game-cover-1.png" alt="A sci-fi novel featuring an ansible as a communication device." height="2in" />
-<p class="caption">
-A sci-fi novel featuring an ansible as a communication device.
-</p>
+![A sci-fi novel featuring an ansible as a communication
+device.](/slides_files/figure-markdown_strict/enders-game-cover-1.png)
 
 Use Ansible to talk to your fleet
 =================================
 
-<img src="slides_files/figure-markdown_strict/ansible-orchestra-1.png" width="3in" />
+<img src="/slides_files/figure-markdown_strict/ansible-orchestra-1.png" width="3in" />
 
     # display free disk space
     control/$ ansible web -a "df"
@@ -60,17 +58,17 @@ Any executable file can be used as a dynamic inventory!
 Share control of servers
 ========================
 
-![](slides_files/figure-markdown_strict/ansible-tower-1.png)
+![](/slides_files/figure-markdown_strict/ansible-tower-1.png)
 
 Control a single server with Ansible
 ====================================
 
-![](slides_files/figure-markdown_strict/ansible-simple-1.png)
+![](/slides_files/figure-markdown_strict/ansible-simple-1.png)
 
 Continuous integration with Ansible
 ===================================
 
-![](slides_files/figure-markdown_strict/ansible-ci-1.png)
+![](/slides_files/figure-markdown_strict/ansible-ci-1.png)
 
 Provisioning on a Vagrant VM with Ansible
 =========================================
@@ -110,7 +108,7 @@ galaxy
 Ansible for DevOps
 ==================
 
-![](slides_files/figure-markdown_strict/ansible-for-devops-1.png)
+![](/slides_files/figure-markdown_strict/ansible-for-devops-1.png)
 
 Vocabulary
 ==========
