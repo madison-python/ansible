@@ -1,6 +1,0 @@
-slides.pdf
-*cache/
-*files/
-!slides_files/figure-markdown_strict/
-.Rproj.user
-.vagrant/
