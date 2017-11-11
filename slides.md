@@ -7,7 +7,7 @@ device.](/slides_files/figure-markdown_strict/enders-game-cover-1.png)
 Use Ansible to talk to your fleet
 =================================
 
-<img src="/slides_files/figure-markdown_strict/ansible-orchestra-1.png" width="3in" />
+![](/slides_files/figure-markdown_strict/ansible-orchestra-1.png)
 
     # display free disk space
     control/$ ansible web -a "df"
